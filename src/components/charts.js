@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { collection, getDocs, getFirestore } from "firebase/firestore"
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
 function Chart({ color, cat1 }) {
   const [data2, setData2] = useState([])
@@ -27,7 +27,7 @@ function Chart({ color, cat1 }) {
         prov.flat(1).map(item => {
           if (item) {
             const index = a.findIndex(object => {
-              return pronoun === "title"? object.name === item[pronoun] : object.name === item[cat1] ;
+              return pronoun === "title" ? object.name === item[pronoun] : object.name === item[cat1];
             })
             a[index]['Were sold'] += item.number
           }
@@ -41,23 +41,19 @@ function Chart({ color, cat1 }) {
   }, [])
   return (
     <>
-      <BarChart
-        width={500}
-        height={300}
-        data={data2}
-        margin={{
-          top: 5,
-          right: 30,
-          left: 20,
-          bottom: 5,
-        }}
-      >
-        <CartesianGrid strokeDasharray="3 1" />
-        <XAxis dataKey="name" tick="" />
-        <YAxis />
-        <Tooltip itemStyle={{ backgroundColor: '#0c0c0c' }} wrapperStyle={{ backgroundColor: '#0c0c0c' }} contentStyle={{ backgroundColor: '#0c0c0c' }} />
-        <Bar dataKey="Were sold" fill={color} />
-      </BarChart>
+      <ResponsiveContainer width="100%" height="100%">
+        <BarChart
+          width={500}
+          height={300}
+          data={data2}
+        >
+          <CartesianGrid strokeDasharray="9 10" />
+          <XAxis dataKey="name" tick="" />
+          <YAxis />
+          <Tooltip itemStyle={{ backgroundColor: '#0c0c0c' }} wrapperStyle={{ backgroundColor: '#0c0c0c' }} contentStyle={{ backgroundColor: '#0c0c0c' }} />
+          <Bar dataKey="Were sold" fill={color} />
+        </BarChart>
+      </ResponsiveContainer>
     </>
   );
 }
