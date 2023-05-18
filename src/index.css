@@ -30,6 +30,19 @@ html::-webkit-scrollbar-thumb {
     font-size: 25px;
     text-align: left;
 }
+/* h1{
+  background: linear-gradient(#bf9b6f,#bf9b6f);
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-size: 15% 15px;
+    color: #bf9b6f;
+    font: 700 calc(30px + 7.5vw) Eczar,serif;
+    font-size: 60px;
+    line-height: 1.1;
+    padding-bottom: 30px;
+    text-align: left;
+    width: 440px;
+} */
 .charts{
   height: 500px;
   width: 80%;
@@ -122,4 +135,311 @@ html::-webkit-scrollbar-thumb {
 
 ul {
   list-style: none;
+}
+
+.lds-dual-ring {
+  z-index: 100;
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading {
+  right: 0;
+  top: 0;
+  position: fixed;
+  width: 90vw;
+  height: 100vh;
+  backdrop-filter: blur(5px);
+  z-index: 100;
+}
+.productContainer {
+  position: absolute;
+  left: 12vw;
+  width: 80vw;
+  height: 95vh;
+  top: 2.5vh;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  overflow: auto;
+}
+
+.productContainer::-webkit-scrollbar {
+  width: 2px;
+}
+
+.imgCard {
+  position: relative;
+  height: 85%;
+  min-width: 100%;
+  transition: 1s;
+  opacity: 0.9;
+  filter: blur(2px);
+}
+
+.card:hover .imgCard {
+  opacity: 0.5;
+}
+
+.card {
+  display: flex;
+  width: 300px;
+  height: 360px;
+  border-radius: 20px;
+  overflow: hidden;
+  align-items: flex-start;
+  flex-direction: column;
+  background-color: #0c0c0c;
+  box-shadow: rgba(105, 105, 105, 0.2) 0px 8px 24px;
+  margin: 10px 33px;
+  margin-bottom: 25px;
+  transition: 0.5s;
+}
+
+.card:hover {
+  box-shadow: rgb(95, 79, 57) 0px 8px 24px;
+}
+
+.titleCard {
+  width: fit-content;
+  font: bold calc(60px + 90 * ((100vw - 400px) / 1200)) "Eczar", serif;
+  font-size: 14px;
+  background: linear-gradient(#BF9B6F, #BF9B6F);
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 2px;
+  transition: ease;
+  transition: 1s;
+  padding-bottom: 4px;
+  opacity: 0.5;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  text-align: left;
+}
+
+.card:hover .titleCard {
+  opacity: 1;
+  background-size: 30% 2px;
+}
+
+.textCard {
+  padding: 10px;
+
+}
+
+.informationCard {
+  text-align: left;
+  font: normal 16px/30px "Alegreya Sans", sans-serif;
+  transition: 1s;
+  opacity: 0.5;
+  font-size: 15px;
+  letter-spacing: 2px;
+}
+
+.card:hover .informationCard {
+  opacity: 0;
+  display: hide;
+}
+
+.hoverCard {
+  opacity: 0;
+  position: absolute;
+  transition: 0.5s;
+  z-index: 10;
+  width: 260px;
+  height: 310px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.card:hover .hoverCard {
+  opacity: 1;
+  transition: 1s;
+}
+
+.more img{
+  width: 70px;
+}
+
+.itemDatail {
+  position: absolute;
+  right: 5vw;
+  width: 85vw;
+  top: 5vh;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.details {
+  width: 50%;
+}
+
+.btnImg {
+  width: 70px;
+  height: 70px;
+  overflow: hidden;
+  border-radius: 10px;
+  border: none;
+  transition: 0.3s;
+  margin: 4px;
+}
+
+.btnImg:hover {
+  border: #b69165 1px solid;
+  width: 75px;
+  height: 75px;
+  cursor: pointer;
+  position: relative;
+  box-shadow: rgb(95 79 57) 0px 8px 24px;
+}
+
+.innerBtn {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.img {
+  display: flex;
+  width: 30%;
+  flex-direction: column;
+  height: 100%;
+
+}
+
+.mainImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.minImgCon {
+  overflow: hidden;
+  height: 430px;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: rgba(105, 105, 105, 0.644) 0px 8px 24px;
+}
+
+.miniImg {
+  left: -1%;
+  position: relative;
+  height: 80px;
+  margin-top: 20px;
+  display: flex;
+  width: 102%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pDetail {
+  margin-top: 10px;
+  margin-bottom: 25px;
+  text-align: left;
+  font: normal 14px/17px "Alegreya Sans", sans-serif;
+  letter-spacing: 3px;
+  font-size: 15px;
+  line-height: 30px;
+
+}
+
+.h1 {
+  letter-spacing: 5px;
+  font: normal 14px/17px "Alegreya Sans", sans-serif;
+  margin-top: 30px;
+  font-size: 20px
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start
+}
+
+.aditionalInfo {
+  font: normal 14px/17px "Alegreya Sans", sans-serif;
+  letter-spacing: 5px;
+  font-size: 15px;
+  margin-bottom: 10px;
+  opacity: 0.7;
+  text-align: left;
+}
+
+.priceInfo {
+  font: normal 14px/17px "Alegreya Sans", sans-serif;
+  letter-spacing: 5px;
+  font-size: 20px;
+  font-weight: 900;
+  color: #BF9B6F;
+  padding-bottom: 25px;
+}
+
+.textInput{
+  width: 100%;
+  background: none;
+  border: #b69165 1px solid;
+  border-radius: 10px;
+  height: 150px;
+  padding: 10px;
+}
+.ittleEspe{
+  margin-top: 0px;
+  color: #BF9B6F;
+  font: normal 14px/17px "Alegreya Sans", sans-serif;
+  letter-spacing: 5px;
+  font-size: 20px;
+  font-weight: 900;
+}
+.inputNormal{
+  width: 100px;
+  background: none;
+  border: #b69165 1px solid;
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+
+.companysContainer {
+  width: auto;
+  font: normal 14px/17px "Alegreya Sans", sans-serif;
+  font-size: 15px;
+  text-transform: capitalize;
+  letter-spacing: 5px;
+  background-color: #0c0c0c;
+  border-radius: 10px;
+  border: 1px solid #BF9B6F;
+  padding: 5px 10px 5px 10px;
 }

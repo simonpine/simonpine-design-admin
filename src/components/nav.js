@@ -22,15 +22,15 @@ function Nav({ main }) {
         setCover('left0')
         setNav('right0')
     }
-    if (main == 1) {
+    if (main === 1) {
         one.opacity = "1"
         one.backgroundSize = "50% 2px"
     }
-    else if (main == 2) {
+    else if (main === 2) {
         two.opacity = "1"
         two.backgroundSize = "50% 2px"
     }
-    else if (main == 4) {
+    else if (main === 4) {
         four.opacity = "1"
     }
     else {
@@ -70,8 +70,8 @@ function Nav({ main }) {
                     </li>
                     <li>
                         <Link className="a" to={{
-                            pathname: "/About",
-                        }} style={two} >About</Link>
+                            pathname: "/products",
+                        }} style={two} >Products</Link>
                     </li>
                     <li>
                         <Link className="a" to={{
