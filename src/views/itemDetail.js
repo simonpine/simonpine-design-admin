@@ -9,6 +9,7 @@ import CompanyChan from "../components/companyChange";
 import CategoryChan from "../components/categoryChange";
 import Nav from "../components/nav";
 function ItemDetail() {
+
     const navigate = useNavigate();
     const [obli, setObli] = useState(false);
     const [imageUpload, setImageUpload] = useState(null);
@@ -95,7 +96,9 @@ function ItemDetail() {
                 getDownloadURL(snapshot.ref).then((url) => {
                     const newItColle = collection(db, 'items')
                     updateItem.pictureUrl = url
-                    addDoc(newItColle, updateItem).then((y) => { navigate(`/products/item/${y.id}`) })
+                    addDoc(newItColle, updateItem).then((y) => { navigate(`/products/item/${y.id}`) }).then(snap => {
+                        window.location.reload(false);
+                    })
                 });
             })
         }
@@ -111,6 +114,9 @@ function ItemDetail() {
     }
     function fileItmeChange(evt) {
         setImageUpload(evt.target.files[0])
+    }
+    function delte(evt) {
+        deleteDoc(itemUse).then((y) => { navigate(`/products`) })
     }
     return (
         <div>
@@ -166,7 +172,10 @@ function ItemDetail() {
 
                     <h2 className="priceInfo">Company: <CompanyChan curr={product.company} funt={changeComp} /></h2>
                     <h2 className="priceInfo">Category: <CategoryChan disabled={disa} curr={product.category} funt={changeComp} /></h2>
-                    <button className="sumButtom" disabled={disa || disa2} type="submit">Save Changes</button>
+                    <div>
+                        <button className="sumButtom" disabled={disa || disa2} type="submit">Save Changes</button>
+                        {!disa2 && <button className="sumButtom del" onClick={delte} type='button'>Delete Product</button>}
+                    </div>
                 </form>
 
             </section>
