@@ -392,7 +392,7 @@ ul {
 
 .aditionalInfo {
   font: normal 14px/17px "Alegreya Sans", sans-serif;
-  letter-spacing: 5px;
+  letter-spacing: 3px;
   font-size: 15px;
   margin-bottom: 10px;
   opacity: 0.7;
@@ -401,7 +401,7 @@ ul {
 
 .priceInfo {
   font: normal 14px/17px "Alegreya Sans", sans-serif;
-  letter-spacing: 5px;
+  letter-spacing: 3px;
   font-size: 20px;
   font-weight: 900;
   color: #BF9B6F;
@@ -415,12 +415,13 @@ ul {
   border-radius: 10px;
   height: 150px;
   padding: 10px;
+  letter-spacing: 1px;
 }
 .ittleEspe{
   margin-top: 0px;
   color: #BF9B6F;
   font: normal 14px/17px "Alegreya Sans", sans-serif;
-  letter-spacing: 5px;
+  letter-spacing: 3px;
   font-size: 20px;
   font-weight: 900;
 }
@@ -437,9 +438,65 @@ ul {
   font: normal 14px/17px "Alegreya Sans", sans-serif;
   font-size: 15px;
   text-transform: capitalize;
-  letter-spacing: 5px;
+  letter-spacing: 3px;
   background-color: #0c0c0c;
   border-radius: 10px;
   border: 1px solid #BF9B6F;
   padding: 5px 10px 5px 10px;
+}
+
+.file-input__input {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.file-input__label {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  font-size: 14px;
+  padding: 5px 12px;
+  background: none;
+  border: 1px solid #BF9B6F;
+}
+
+.file-input__label svg {
+  height: 16px;
+  margin-right: 4px;
+}
+.file-input{
+  margin-top: 10px;
+  font: normal 14px/17px "Alegreya Sans", sans-serif;
+  font-size: 15px;
+  letter-spacing: 3px;
+}
+.sumButtom{
+  background: none;
+  background-color: #b69165;
+  letter-spacing: 3px;
+  border: none;
+  border-radius: 10px;
+  padding: 5px 10px;
+  transition: 0.3s;
+}
+.sumButtom:hover{
+  background-color: #8b7253;
+  cursor: pointer;
+}
+.cardSpecial{
+  background: none;
+  border: #BF9B6F solid 1px;
+
+}
+.sumButtom:disabled{
+  background-color: #b692656b;
+  cursor:auto;
 }
