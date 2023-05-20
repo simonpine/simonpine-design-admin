@@ -15,6 +15,7 @@ function Product({ product }) {
             <img className="imgCard" src={product.pictureUrl} />
             <div className="textCard">
                 <h2 className="titleCard">{product.title}</h2>
+                <h3 className=" titleCard brand">{product.company}</h3>
             </div>
         </div>
     );
