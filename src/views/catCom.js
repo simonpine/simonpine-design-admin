@@ -24,8 +24,8 @@ function CatCom() {
             {loading && <div className="loading"><div className="lds-dual-ring"></div></div>}
 
             <div className="productContainer por2">
-                <CatCon list={products}></CatCon>
-                
+                <CatCon where={'company'} list={products}></CatCon>
+                <CatCon where={'category'} list={products}></CatCon>
             </div>
         </>
     );

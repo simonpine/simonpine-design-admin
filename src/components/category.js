@@ -1,9 +1,9 @@
 import { useState, useEffect, useRef } from 'react'
 import { collection, doc, getFirestore, getDoc, updateDoc, deleteDoc, addDoc } from "firebase/firestore"
-function Category({ id, name, disa }) {
+function Category({ id, name, disa, where }) {
     const refInputTitle = useRef('')
     const db = getFirestore()
-    const itemUse = doc(db, 'category', id)
+    const itemUse = doc(db, where, id)
 
     useEffect(() => {
         refInputTitle.current.value = name
@@ -21,12 +21,12 @@ function Category({ id, name, disa }) {
                     updateDoc(itemUse, newt).then(snap => {
                         window.location.reload(false);
                     })
-                }} className="sumButtom sumVut" type="submit">Save Changes</button>
+                }} className="sumButtom sumVut" type="submit">Save</button>
                 <button disabled={disa} onClick={(evt) => {
                     deleteDoc(itemUse).then(snap => {
                         window.location.reload(false);
                     })
-                }} className="sumButtom sumVut del" type='button'>Delete Category</button>
+                }} className="sumButtom sumVut del" type='button'>Delete</button>
             </div>
         </div>
 

@@ -2,13 +2,13 @@ import { useState, useEffect, useRef } from "react";
 import { collection, doc, getFirestore, addDoc, getDocs } from "firebase/firestore"
 import Category from "./category";
 import Nav from "../components/nav";
-function CatCon({ list }) {
+function CatCon({ list, where }) {
     const refInputTitle = useRef('')
     
     const [products, setProducts] = useState([])
     const [loading, setLoading] = useState(true)
     const db = getFirestore()
-    const itemsColection = collection(db, 'category')
+    const itemsColection = collection(db, where)
 
     useEffect(() => {
         getDocs(itemsColection).then((snap) => {
@@ -24,18 +24,8 @@ function CatCon({ list }) {
         <>
             {loading && <div className="loading"><div className="lds-dual-ring"></div></div>}
             <div className="dicv">
-                <h2 className="categorySpacion">Categories</h2>
-                {products.map(cat => {
-                    const dis = list.some(item => item.category === cat.title)
-                    return (
-                        <Category key={cat.id} name={cat.name} disa={dis} id={cat.id}></Category>
-                    )
-                })}
-                <div className='card'>
-                    <h2 className='id'>New Category</h2>
-                    <input placeholder="Bathroom" className="inputNormal inputNormal2" ref={refInputTitle} />
-                    <div className='butContEs butContEs2'>
-                        <button onClick={(evt) => {
+                <h2 className="categorySpacion">{where}</h2>
+                <form onSubmit={(evt) => {
                             const newt = {
                                 name: refInputTitle.current.value,
                                 title: refInputTitle.current.value
@@ -43,9 +33,20 @@ function CatCon({ list }) {
                             addDoc(itemsColection, newt).then(snap => {
                                 window.location.reload(false);
                             })
-                        }} className="sumButtom" type="submit">Create Category</button>
+                        }} className='card'>
+                    <h2 className='id'>New {where}</h2>
+                    <input required={true} placeholder={where} className="inputNormal inputNormal2" ref={refInputTitle} />
+                    <div className='butContEs butContEs2'>
+                        <button className="sumButtom" type="submit">Create new {where}</button>
                     </div>
-                </div>
+                </form>
+                {products.map(cat => {
+           
+                    const dis = list.some(item => item[where] === cat.name)
+                    return (
+                        <Category where={where} key={cat.id} name={cat.name} disa={dis} id={cat.id}></Category>
+                    )
+                })}
             </div>
         </>
     );
