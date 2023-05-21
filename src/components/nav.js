@@ -66,7 +66,7 @@ function Nav({ main }) {
                     <li>
                         <Link className="a" to={{
                             pathname: "/",
-                        }} style={one} >Home</Link>
+                        }} style={one} >Orders</Link>
                     </li>
                     <li>
                         <Link className="a" to={{

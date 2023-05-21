@@ -1,6 +1,7 @@
 import './App.css';
 import Chart from './components/charts';
 import Nav from './components/nav';
+import Orders from './components/orders';
 import { useState, useEffect } from "react";
 
 
@@ -22,6 +23,7 @@ function App() {
           <Chart className='A' color={'#BF9B6F'} cat1={'items'} />
         </div>
       </div>
+      <Orders></Orders>
     </div>
   );
 }

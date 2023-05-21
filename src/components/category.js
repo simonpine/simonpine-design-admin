@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { collection, doc, getFirestore, getDoc, updateDoc, deleteDoc, addDoc } from "firebase/firestore"
 function Category({ id, name, disa, where }) {
     const refInputTitle = useRef('')
@@ -8,6 +8,7 @@ function Category({ id, name, disa, where }) {
     useEffect(() => {
         refInputTitle.current.value = name
     }, [])
+
     return (
         <div className='card'>
             <h2 className='id'>{id}</h2>

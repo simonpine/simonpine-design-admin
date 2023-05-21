@@ -480,6 +480,7 @@ ul {
   letter-spacing: 3px;
   border: none;
   border-radius: 10px;
+  font-size: 15px;
   padding: 5px 10px;
   transition: 0.3s;
   margin-right: 20px;
@@ -555,4 +556,30 @@ ul {
 }
 .butContEs{
   width: 100%;
+}
+.ordersCont{
+  width: 99%;
+  left: 0px;
+  height: 90vh;
+  top: 5vh;
+}
+.orederCard{
+  margin: 5%;
+  width: 30%;
+  height: 300px;
+  padding: 5%;
+  justify-content: space-between;
+}
+.o{
+  position: relative;
+  height: 80vh;
+  top: 20vh;
+  width: 64vw;
+  left: 18vw;
+  display: flex;
+  flex-direction: column;
+}
+.h2Ored{
+  font-size: 15px;
+  letter-spacing: 3px;
 }
