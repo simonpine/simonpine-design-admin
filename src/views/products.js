@@ -14,7 +14,6 @@ function Products() {
         const itemsColection = collection(db, 'items')
         getDocs(itemsColection).then((snap) => {
             const prov = {}
-            const cats = []
             snap.docs.map((c) => {
                 let a = { ...c.data(), id: c.id, }
 
@@ -50,27 +49,17 @@ function Products() {
                     </div>
                 </div>
                 {Object.keys(products).map(product => {
-                    // console.log(product)
                     return (
-                        <>
-                            <h2 className="categorySpacion">{product} category</h2>
+                        <div className="dicv" key={product}>
+                            <h2 className="categorySpacion">Category: {product}</h2>
                             {products[product].map(item => {
-                                // console.log(item)
                                 return (
-                                    <Product key={product.id} product={item} />
+                                    <Product key={item.id} product={item} />
                                 )
                             })}
-                        </>
+                        </div>
                     )
-                    products[product].map(item => {
-                        // console.log(item)
-                        return (
-                            <Product key={product.id} product={product} />
-                        )
-                    })
-                    // return (
-                    //     <Product key={product.id} product={product} />
-                    // )
+
                 })}
             </div>
         </>

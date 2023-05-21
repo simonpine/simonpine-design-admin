@@ -214,6 +214,7 @@ ul {
 }
 
 .card {
+  /* position: absolute; */
   display: flex;
   width: 300px;
   height: 360px;
@@ -503,7 +504,8 @@ ul {
 
 }
 .sumButtom:disabled{
-  background-color: #b692656b;
+  background-color: #b69165;
+  opacity: 0.6;
   cursor:auto;
 }
 .del{
@@ -511,6 +513,9 @@ ul {
 }
 .del:hover{
   background-color: rgba(253, 30, 30, 0.753);
+}
+.del:disabled{
+  background-color: #ff4343;
 }
 .brand{
   font: normal 14px/17px "Alegreya Sans", sans-serif;
@@ -526,4 +531,37 @@ ul {
   font: 700 calc(30px + 7.5vw) Eczar,serif;
   font-size: 35px;
   text-align: left;
+ 
+}
+.dicv{
+  display: flex;
+  width: 100%;
+  margin: none;
+  flex-wrap: wrap;
+}
+.inputNormal2{
+  margin: auto;
+  width: 80%;
+}
+.butContEs{
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 18px;
+
+}
+.sumVut{
+  width: 40%;
+  margin: 0px;
+}
+.inputNormal:disabled{
+  opacity: 0.6;
+}
+.id{
+  margin: 20px 0 0 20px;
+  letter-spacing: 3px;
+}
+.butContEs2{
+  width: 100%;
 }

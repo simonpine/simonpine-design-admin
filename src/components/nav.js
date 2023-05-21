@@ -57,7 +57,7 @@ function Nav({ main }) {
                         </a>
                     </li>
                     <li>
-                        <a href="https://simonpine.com/" target="_blank">
+                        <a href="https://simonpine-design.netlify.app/" target="_blank">
                             <img src={logo} alt="instagram logo" className='socialMedia' />
                         </a>
                     </li>
@@ -75,8 +75,8 @@ function Nav({ main }) {
                     </li>
                     <li>
                         <Link className="a" to={{
-                            pathname: "/Store/All",
-                        }} style={tree} >Store</Link>
+                            pathname: "/categorys-companys",
+                        }} style={tree} >cate / comp</Link>
                     </li>
                 </ul>
                 {/* <Cart main={four} /> */}

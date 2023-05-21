@@ -29,7 +29,7 @@ function Chart({ color, cat1 }) {
             const index = a.findIndex(object => {
               return pronoun === "title" ? object.name === item[pronoun] : object.name === item[cat1];
             })
-            a[index]['Were sold'] += item.number
+            if(a[index] !== undefined) a[index]['Were sold'] += item.number
           }
         })
         a.map((item) => {
@@ -39,6 +39,7 @@ function Chart({ color, cat1 }) {
       })
     })
   }, [])
+ 
   return (
     <>
       <ResponsiveContainer width="100%" height="100%">
