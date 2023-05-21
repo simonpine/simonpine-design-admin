@@ -3,8 +3,8 @@ import logo from '../img/logo1.svg';
 import insta from '../img/insta.png';
 import twi from '../img/twitter.png';
 import git from '../img/facebook.png';
-// import ham from '../img/hamburger.png';
-// import close from '../img/close.png';
+import ham from '../img/hamburger.png';
+import close from '../img/close.png';
 import { Link } from 'react-router-dom'
 import { useState } from 'react';
 function Nav({ main }) {
@@ -82,8 +82,8 @@ function Nav({ main }) {
                 {/* <Cart main={four} /> */}
             </nav>
 
-            {/* <div className='nav2 nav2Cont'>
-                <Cart className="" main={four} cell={true} />
+            <div className='nav2 nav2Cont'>
+                {/* <Cart className="" main={four} cell={true} /> */}
                 <button className='hamButton'><img alt='hamburger button' onClick={inF} src={ham}></img></button>
                 <nav className={`nav2 navside ${nav}`}>
                     <button onClick={out} className='clolseButton'><img alt='close button' src={close}></img></button>
@@ -91,17 +91,17 @@ function Nav({ main }) {
                         <li>
                             <Link className="a" to={{
                                 pathname: "/",
-                            }} style={one} >Home</Link>
+                            }} style={one} >Orders</Link>
                         </li>
                         <li>
                             <Link className="a" to={{
-                                pathname: "/About",
-                            }} style={two} >About</Link>
+                                pathname: "/products",
+                            }} style={two} >Products</Link>
                         </li>
                         <li>
                             <Link className="a" to={{
-                                pathname: "/Store/All",
-                            }} style={tree} >Store</Link>
+                                pathname: "/categorys-companys",
+                            }} style={tree} >cate/comp</Link>
                         </li>
                     </ul>
                     <ul className="tig">
@@ -128,7 +128,7 @@ function Nav({ main }) {
                     </ul>
                 </nav>
                 <div onClick={out} className={`cover ${cover}`}></div>
-            </div> */}
+            </div>
         </>
 
     );
