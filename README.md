@@ -1,6 +1,6 @@
-# SimonPine - Design
+# SimonPine - Design - Admin
 
-E-commerce simulator builded with React.js and Firestore.
+E-commerce admin vew simulator builded with React.js and Firestore.
 
 ## Deploy
 
